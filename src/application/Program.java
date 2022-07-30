@@ -2,6 +2,7 @@ package application;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -50,8 +51,11 @@ public class Program {
 			System.out.printf("Valor total vendido pelo vendedor Logan nos meses 1 e 7 = %.2f\n", sum);
 			
 		} 
+		catch (FileNotFoundException e) {
+			System.out.println("Erro: " + path + " (O sistema não pode encontrar o arquivo especificado)");
+		}
 		catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		
 		keyBoard.close();
